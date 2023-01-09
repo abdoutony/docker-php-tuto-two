@@ -1,0 +1,22 @@
+version: '3'
+services:
+  web:
+    build: ./
+    container_name: my-web-php-app
+    ports:
+      - 8087:80
+    links:
+      - xampp
+    volumes:
+      - ./app:/www
+  xampp:
+    image: tomsik68/xampp
+    container_name: xampp_container
+    ports:
+      - 41062:80
+    volumes:
+      - ./app:/www
+  
+    
+  
+    
